@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import './home.css';
+import './home.css'
 
 export default class Home extends Component {
-  render() {
+  render () {
     return (
       <div>
 
-        <div className="container">
+        <div className='container'>
 
           <h3>This is the Grow Nodes Management System</h3>
           <p>you can:</p>
@@ -17,6 +17,6 @@ export default class Home extends Component {
           </ul>
         </div>
       </div>
-    );
+    )
   }
 }

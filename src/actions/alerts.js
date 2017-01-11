@@ -17,7 +17,7 @@ export function connectError() {
 
 export function alert(payload) {
   return {
-    type: ALERT, 
+    type: ALERT,
     payload,
   }
 }
