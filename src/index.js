@@ -50,8 +50,8 @@ ReactDOM.render(
           <IndexRoute component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/login" component={Login}/>
+          <Route path="/notifications" component={Notifications}/>
           <Route component={RestrictPage}>
-            <Route path="/notifications" component={Notifications}/>
             <Route path="/users" component={UsersPage} />
             <Route path="/repos" component={ReposPage} />
           </Route>
