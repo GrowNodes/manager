@@ -5,17 +5,15 @@ class Notifications extends Component {
 
   sendToEveryone(event) {
     event.preventDefault();
-    const title = this.refs.title;
     const body = this.refs.body;
     this.props.dispatch(sendToEveryone(this, body.value));
-    title.value = '';
     body.value = '';
   }
 
   addTodoEveryone(event) {
     event.preventDefault();
-    const title = this.refs.title;
-    const body = this.refs.body;
+    const title = this.refs.todotitle;
+    const body = this.refs.todobody;
     this.props.dispatch(addTodoEveryone(this, title.value, body.value));
     title.value = '';
     body.value = '';
@@ -45,11 +43,11 @@ class Notifications extends Component {
               <div className="card-header">Add todo item to everyone</div>
               <form className="card-block">
                 <div className="input-group">
-                  <input type="text" ref="title" className="form-control" placeholder="title" required autoFocus/>
+                  <input type="text" ref="todotitle" className="form-control" placeholder="title" required autoFocus/>
                 </div>
 
                 <div className="input-group">
-                  <textarea ref="body" className="form-control" placeholder="body" required />
+                  <textarea ref="todobody" className="form-control" placeholder="body" required />
                 </div>
 
 
