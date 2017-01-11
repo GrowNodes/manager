@@ -35,11 +35,11 @@ export default class Header extends Component {
               {/* <li title="Github Users with over 1000 Followers" className={isUsersPage ? 'nav-item active' : 'nav-item'}><Link className="nav-link" to="/users">Most Followed Users</Link></li> */}
               {/* <li title="Github Repos with over 10000 Stars" className={isReposPage ? 'nav-item active' : 'nav-item'}><Link className="nav-link" to="/repos">Most Starred Repos</Link></li> */}
               <li title="Notifications" className={isNotificationsPage ? 'nav-item active' : 'nav-item'}><Link className="nav-link" to="/notifications">Notifications</Link></li>
-              <li title="About" className={isAboutPage ? 'nav-item active' : 'nav-item'}><Link className="nav-link" to="/about">About Us</Link></li>
+              <li title="About" className={isAboutPage ? 'nav-item active' : 'nav-item'}><Link className="nav-link" to="/about">About</Link></li>
             </ul>
 
             <ul className="navbar-nav mt-2 mt-md-0">
-              <Alerts />
+              {/* <Alerts /> */}
               <UserProfile user={user} handleLogout={this.onLogoutClick} />
             </ul>
           </div>

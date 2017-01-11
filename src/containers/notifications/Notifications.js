@@ -26,7 +26,7 @@ class Notifications extends Component {
         <div className="row">
           <div className="col-md-6">
             <div className="card">
-              <div className="card-header">Send notification to everyone</div>
+              <div className="card-header">Send text to everyone</div>
               <form className="card-block">
 
                 <div className="input-group">
