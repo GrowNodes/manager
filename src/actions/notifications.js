@@ -44,7 +44,8 @@ export function addTodoEveryone (ctx, title, body) {
       })
 
       for (var i = 0; i < data.length; i++) {
-        sendSMS(data[i].phone, `${(new Date()).toISOString()} \n\nA new todo item has been added to your Grow Node. Please Check the website/app for details.`).then(() => {
+        sendSMS(data[i].phone, 'A new todo item has been added to your Grow Node. Please Check the website/app for details.')
+        .then(() => {
           console.log('Sent SMS!')
         })
       }
@@ -93,14 +94,14 @@ function sendSMS (number, body) {
 }
 
 function getAllNodes (ctx) {
-  return Base.fetch('grow_nodes', {
+  return Base.fetch('grownodes', {
     context: ctx,
     asArray: false
   })
 }
 
 function addFirebaseTodo (serial, title, body) {
-  var immediatelyAvailableReference = Base.push(`grow_nodes/${serial}/todo_list`, {
+  var immediatelyAvailableReference = Base.push(`grownodes/${serial}/todo_list`, {
     data: {
       created_at: (new Date()).toISOString(),
       title,

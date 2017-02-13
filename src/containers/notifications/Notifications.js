@@ -6,7 +6,7 @@ class Notifications extends Component {
   sendToEveryone (event) {
     event.preventDefault()
     const body = this.refs.body
-    this.props.dispatch(sendToEveryone(this, body.value))
+    this.props.sendToEveryone(this, body.value)
     body.value = ''
   }
 
@@ -14,7 +14,7 @@ class Notifications extends Component {
     event.preventDefault()
     const title = this.refs.todotitle
     const body = this.refs.todobody
-    this.props.dispatch(addTodoEveryone(this, title.value, body.value))
+    this.props.addTodoEveryone(this, title.value, body.value)
     title.value = ''
     body.value = ''
   }
@@ -62,4 +62,4 @@ function mapStateToProps (state) {
   return { grownodes: state.grownodes }
 }
 
-export default connect(mapStateToProps)(Notifications)
+export default connect(mapStateToProps, { sendToEveryone, addTodoEveryone })(Notifications)
