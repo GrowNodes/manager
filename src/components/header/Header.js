@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
-import UserProfile from './UserProfile';
-import Alerts from './Alerts';
 import './header.css';
 
 export default class Header extends Component {
@@ -15,8 +13,6 @@ export default class Header extends Component {
     const pathname = this.props.location.pathname;
     const isLoginPage = pathname.indexOf('login') > -1;
     const isAboutPage = pathname.indexOf('about') > -1;
-    const isUsersPage = pathname.indexOf('users') > -1;
-    const isReposPage = pathname.indexOf('repos') > -1;
 
     const isNotificationsPage = pathname.indexOf('notifications') > -1;
 
@@ -38,10 +34,6 @@ export default class Header extends Component {
               <li title="About" className={isAboutPage ? 'nav-item active' : 'nav-item'}><Link className="nav-link" to="/about">About</Link></li>
             </ul>
 
-            <ul className="navbar-nav mt-2 mt-md-0">
-              {/* <Alerts /> */}
-              <UserProfile user={user} handleLogout={this.onLogoutClick} />
-            </ul>
           </div>
         </nav>
     );

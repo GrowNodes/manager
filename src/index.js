@@ -26,17 +26,13 @@ const history = useRouterHistory(createHashHistory)();
 
 import configureStore from './store/configureStore';
 import connectToAlerts from './utils/socketUtils';
-
+import Notifications from './containers/notifications/Notifications'
 import App from './containers/app/App';
 import Login from './containers/login/Login';
 import RestrictPage from './containers/misc/RestrictPage';
 import Home from './containers/home/Home';
-import UsersPage from './containers/user/UsersPage';
-import ReposPage from './containers/repo/ReposPage';
 import About from './containers/about/About';
 import NotFound from './containers/misc/NotFound';
-
-import Notifications from './containers/notifications/Notifications'
 
 import './index.css';
 
@@ -48,12 +44,10 @@ ReactDOM.render(
     <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
+          <Route path="/notifications" component={Notifications}/>
           <Route path="/about" component={About}/>
           <Route path="/login" component={Login}/>
-          <Route path="/notifications" component={Notifications}/>
           <Route component={RestrictPage}>
-            <Route path="/users" component={UsersPage} />
-            <Route path="/repos" component={ReposPage} />
           </Route>
 
           <Route path="*" component={NotFound}/>
