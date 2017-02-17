@@ -57,6 +57,7 @@ export function addTodoEveryone (ctx, title, body) {
   }
 }
 
+
 function sendSMS (number, body) {
   // Twilio Credentials
   console.log('sending sms')

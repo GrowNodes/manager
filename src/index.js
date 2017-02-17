@@ -33,6 +33,7 @@ import RestrictPage from './containers/misc/RestrictPage';
 import Home from './containers/home/Home';
 import About from './containers/about/About';
 import NotFound from './containers/misc/NotFound';
+import GrownodesList from './containers/GrownodesList'
 
 import './index.css';
 
@@ -45,6 +46,7 @@ ReactDOM.render(
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
           <Route path="/notifications" component={Notifications}/>
+          <Route path="/grownodes" component={GrownodesList}/>
           <Route path="/about" component={About}/>
           <Route path="/login" component={Login}/>
           <Route component={RestrictPage}>

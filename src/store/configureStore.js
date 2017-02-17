@@ -2,11 +2,13 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import auth from '../reducers/auth';
+import usersReducer from '../reducers/users';
 
 const logger = createLogger();
 const rootReducer = combineReducers(
   {
-    auth
+    auth,
+    users: usersReducer
   }
 );
 

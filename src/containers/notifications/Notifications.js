@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
+import Base from '../../utils/base'
 import { connect } from 'react-redux'
 import { sendToEveryone, addTodoEveryone } from '../../actions/notifications'
+import { fetchUsers } from '../../actions/users'
 class Notifications extends Component {
+
+  componentDidMount(){
+    Base.syncState(`grownodes`, {
+      context: this,
+      state: 'grownodes',
+      asArray: false
+    })
+  }
 
   sendToEveryone (event) {
     event.preventDefault()
@@ -59,7 +69,7 @@ class Notifications extends Component {
 };
 
 function mapStateToProps (state) {
-  return { grownodes: state.grownodes }
+  return { users: state.users }
 }
 
-export default connect(mapStateToProps, { sendToEveryone, addTodoEveryone })(Notifications)
+export default connect(mapStateToProps, { sendToEveryone, addTodoEveryone, fetchUsers })(Notifications)
